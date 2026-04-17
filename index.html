@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PhotoBooth Vibes 🎉</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <h1><i class="fas fa-camera-retro"></i> PhotoBooth Vibes</h1>
+            <p>Klik foto, pilih filter, buat kolase keren! 📸✨</p>
+        </header>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Camera Section -->
+            <section class="camera-section active" id="cameraSection">
+                <div class="camera-container">
+                    <video id="video" autoplay muted playsinline></video>
+                    <canvas id="canvas" style="display: none;"></canvas>
+                    <div class="filter-overlay" id="filterOverlay"></div>
+                </div>
+                
+                <!-- Filter Buttons -->
+                <div class="filter-buttons">
+                    <button class="filter-btn" data-filter="normal">
+                        <span>✨ Normal</span>
+                    </button>
+                    <button class="filter-btn active" data-filter="vintage">
+                        <span>📼 Vintage</span>
+                    </button>
+                    <button class="filter-btn" data-filter="party">
+                        <span>🎉 Party</span>
+                    </button>
+                    <button class="filter-btn" data-filter="cool">
+                        <span>❄️ Cool</span>
+                    </button>
+                    <button class="filter-btn" data-filter="warm">
+                        <span>☀️ Warm</span>
+                    </button>
+                    <button class="filter-btn" data-filter="bwn">
+                        <span>🖤 B&W</span>
+                    </button>
+                </div>
+
+                <!-- Capture Button -->
+                <div class="capture-controls">
+                    <button id="captureBtn" class="capture-btn">
+                        <i class="fas fa-circle"></i>
+                        <span>Ambil Foto</span>
+                    </button>
+                </div>
+            </section>
+
+            <!-- Gallery Section -->
+            <section class="gallery-section" id="gallerySection">
+                <div class="gallery-header">
+                    <h2>Galeri Foto Kerenmu ✨</h2>
+                    <button id="newPhotoBtn" class="new-photo-btn">
+                        <i class="fas fa-plus"></i> Foto Baru
+                    </button>
+                </div>
+                
+                <div class="photo-grid" id="photoGrid">
+                    <!-- Photos will be added here -->
+                </div>
+            </section>
+
+            <!-- Collage Section -->
+            <section class="collage-section" id="collageSection">
+                <div class="collage-header">
+                    <h2><i class="fas fa-magic"></i> Buat Kolase Keren!</h2>
+                    <button id="backToGalleryBtn" class="back-btn">
+                        <i class="fas fa-arrow-left"></i> Kembali
+                    </button>
+                </div>
+                
+                <div class="collage-container">
+                    <div class="collage-canvas-container">
+                        <canvas id="collageCanvas" width="800" height="600"></canvas>
+                        <div class="collage-overlay">
+                            <div class="photo-slot" data-slot="1">
+                                <i class="fas fa-camera"></i>
+                                <span>Foto 1</span>
+                            </div>
+                            <div class="photo-slot" data-slot="2">
+                                <i class="fas fa-camera"></i>
+                                <span>Foto 2</span>
+                            </div>
+                            <div class="photo-slot" data-slot="3">
+                                <i class="fas fa-camera"></i>
+                                <span>Foto 3</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="collage-controls">
+                    <div class="photo-slots-selector">
+                        <h3>Pilih Foto:</h3>
+                        <div class="available-photos" id="availablePhotos">
+                            <!-- Available photos will be shown here -->
+                        </div>
+                    </div>
+                    <div class="collage-actions">
+                        <button id="downloadCollageBtn" class="download-btn" disabled>
+                            <i class="fas fa-download"></i> Download Kolase
+                        </button>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
